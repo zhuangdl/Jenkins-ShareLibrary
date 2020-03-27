@@ -1,0 +1,17 @@
+pipeline{
+	agent{
+		node {
+			label "master"
+		}
+	}
+
+	stages{
+		stage('ansible'){
+			steps{
+				script{
+					sh "ansible $host -m $func"
+				}
+			}
+		}
+	}
+}
