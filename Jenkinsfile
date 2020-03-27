@@ -6,6 +6,8 @@ def tools = new org.devops.tools()
 
 String workspace = "/data/jenkins"
 
+hello()
+
 pipeline {
 	agent { 
 		node { label "build0"	//指定运行节点的标签或者名称，等同于agent { label build0}
@@ -13,7 +15,6 @@ pipeline {
 		}
 	}
 	
-    hello()
 	
     //可以省略
     options {	
