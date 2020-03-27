@@ -1,0 +1,17 @@
+pipeline {
+	agent { 
+		node { label "master"	
+		}
+	}
+
+  stages { 
+    	stage('0'){	
+    		steps{	
+    			timeout(time: 5, unit: 'MINUTES'){	
+    					script{
+                sh "mvn -v"
+              }
+    			}
+    		}
+    	}
+ }
