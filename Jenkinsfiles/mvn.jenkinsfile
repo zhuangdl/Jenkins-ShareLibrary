@@ -1,17 +1,19 @@
-pipeline {
-	agent { 
-		node { label "master"	
+pipeline{
+	agent{
+		node {
+			label "master"
 		}
 	}
 
-  stages { 
-    	stage('0'){	
-    		steps{	
-    			timeout(time: 5, unit: 'MINUTES'){	
-    					script{
-                sh "mvn -v"
-              }
-    			}
-    		}
-    	}
- }
+	stages{
+		stage('mvn'){
+			steps{
+				script{
+					mvn_home = tool "mvn"	//全局工具
+					tools.PrintMes("$mvn_home")
+					sh "$mvn_home/bin/mvn -h"
+				}
+			}
+		}
+	}
+}
