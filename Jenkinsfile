@@ -12,7 +12,9 @@ pipeline {
 	           customWorkspace "${workspace}"
 		}
 	}
-
+	
+    hello()
+	
     //可以省略
     options {	
     	timestamps()	//日志会有时间
