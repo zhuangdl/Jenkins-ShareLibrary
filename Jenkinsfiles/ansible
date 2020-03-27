@@ -9,7 +9,7 @@ pipeline{
 		stage('ansible'){
 			steps{
 				script{
-					sh "ansible $host -m $func"
+					sh "ansible $group -m $func"
 				}
 			}
 		}
