@@ -1,6 +1,6 @@
 @Library('jenkinslib') _
 
-def tools = new org.devops.tools()
+def demo = new org.devops.demo()
 
 pipeline{
 	agent{
@@ -14,7 +14,7 @@ pipeline{
 			steps{
 				script{
 					mvn_home = tool "mvn"	//全局工具
-					tools.PrintMes("$mvn_home",'green')
+					demo.PrintMes("$mvn_home",'green')
 					sh "$mvn_home/bin/mvn -h"
 				}
 			}
