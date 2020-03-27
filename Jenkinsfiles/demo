@@ -2,7 +2,7 @@
 
 @Library('jenkinslib') _
 
-def test = new org.devops.demo()
+def test = new org.devops.color()
 
 String workspace = "/data/jenkins"
 
