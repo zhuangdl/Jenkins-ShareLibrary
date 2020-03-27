@@ -10,7 +10,7 @@ pipeline{
 			steps{
 				script{
 					mvn_home = tool "mvn"	//全局工具
-					tools.PrintMes("$mvn_home")
+					tools.PrintMes("$mvn_home",'green')
 					sh "$mvn_home/bin/mvn -h"
 				}
 			}
