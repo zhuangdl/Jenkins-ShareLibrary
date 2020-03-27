@@ -30,7 +30,10 @@ pipeline {
     	stage('GetCode'){	//阶段名称
     		steps{	//步骤
     			timeout(time: 5, unit: 'MINUTES'){	//步骤超时时间
-    					print('获取代码')
+    				script{
+                        tools.PrintMes('下载代码','red')
+                       
+                    }
     			}
     		}
     	}
@@ -39,7 +42,10 @@ pipeline {
     	stage('Build'){	
     		steps{	
     			timeout(time: 20, unit: 'MINUTES'){	
-                    echo "构建代码"
+                    script{
+                        tools.PrintMes("代码构建",'blue')
+                       
+                    }
     			}
     		}
     	}
@@ -49,8 +55,8 @@ pipeline {
     		steps{	
         		timeout(time: 20, unit: "MINUTES"){	
                     script{
-                        print("代码扫描")
-                        tools.printmes('this is my lib!')   // 要放在script下
+                        tools.PrintMes("代码扫描",'green')
+                       
                     }
                 }
     		}
@@ -60,7 +66,10 @@ pipeline {
     //构建后的操作
     post {
     	always {	//总是执行的代码
-            echo "总是执行"
+            script{
+                        tools.PrintMes('总是执行','green1')
+                       
+                    }
     	}
    	//currentBuild是一个全局变量，description是构建描述
     	success {	//成功后执行
