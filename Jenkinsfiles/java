@@ -11,7 +11,7 @@ pipeline{
 				script{
 					java_home = tool "java"	
 					echo "$java_home"
-					sh "java -h"
+					sh "java -v"
 				}
 			}
 		}
