@@ -1,6 +1,6 @@
 #!groovy
 
-@Library(jenkinslib) _
+@Library('jenkinslib') _
 
 def tools = new org.devops.tools()
 
@@ -43,12 +43,14 @@ pipeline {
 
     	//代码扫描
     	stage('CodeScan'){	
-    		steps{	
-    			timeout(time: 20, unit: "MINUTES"){	
-                    print("代码扫描")
-                    tools.printmes('this is my lib!')
-    			}
+    	    steps{	
+                script{
+        	    timeout(time: 20, unit: "MINUTES"){	
+                        print("代码扫描")
+                        tools.printmes('this is my lib!')
+                    }
     		}
+    	     }
     	}
     }
 
