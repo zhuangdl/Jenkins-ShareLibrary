@@ -43,14 +43,14 @@ pipeline {
 
     	//代码扫描
     	stage('CodeScan'){	
-    	    steps{	
-                script{
-        	    timeout(time: 20, unit: "MINUTES"){	
+    		steps{	
+        		timeout(time: 20, unit: "MINUTES"){	
+                    script{
                         print("代码扫描")
-                        tools.printmes('this is my lib!')
+                        tools.printmes('this is my lib!')   // 要放在script下
                     }
+                }
     		}
-    	     }
     	}
     }
 
