@@ -67,7 +67,7 @@ pipeline {
     post {
     	always {	//总是执行的代码
             script{
-                        tools.PrintMes('总是执行','green1')
+                        echo '总是执行'
                        
                     }
     	}
