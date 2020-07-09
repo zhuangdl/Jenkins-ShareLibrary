@@ -1,0 +1,20 @@
+
+pipeline{
+	agent{
+		node {
+			label "master"
+		}
+	}
+
+	stages{
+		stage('mvn'){
+			steps{
+				script{
+					mvn_home = tool "mvn"	
+					echo "$mvn_home"
+					sh "$mvn_home/bin/mvn -v"
+				}
+			}
+		}
+	}
+}
